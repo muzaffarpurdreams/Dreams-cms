@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_stats",
+  "info": {
+    "displayName": "Stat",
+    "icon": "chart-line"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

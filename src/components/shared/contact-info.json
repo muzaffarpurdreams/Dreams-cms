@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_contact_infos",
+  "info": {
+    "displayName": "ContactInfo",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "string"
+    }
+  }
+}

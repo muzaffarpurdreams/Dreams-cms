@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_why_chooses",
+  "info": {
+    "displayName": "WhyChoose",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  }
+}
