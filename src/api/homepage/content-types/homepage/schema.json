@@ -30,6 +30,11 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.testimonial"
+    },
+    "featuredVideos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.featured-video"
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_featured_videos",
+  "info": {
+    "displayName": "FeaturedVideo",
+    "icon": "play",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "youtube_url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

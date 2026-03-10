@@ -13,6 +13,19 @@ export interface SharedContactInfo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFeaturedVideo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_featured_videos';
+  info: {
+    description: '';
+    displayName: 'FeaturedVideo';
+    icon: 'play';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    youtube_url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedStat extends Struct.ComponentSchema {
   collectionName: 'components_shared_stats';
   info: {
@@ -68,6 +81,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.contact-info': SharedContactInfo;
+      'shared.featured-video': SharedFeaturedVideo;
       'shared.stat': SharedStat;
       'shared.testimonial': SharedTestimonial;
       'shared.value': SharedValue;
