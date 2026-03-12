@@ -10,17 +10,6 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "heroTitle": {
-      "type": "string"
-    },
-    "heroSubtitle": {
-      "type": "string"
-    },
-    "heroImage": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": ["images"]
-    },
     "whyChoose": {
       "type": "component",
       "repeatable": true,
