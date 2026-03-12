@@ -10,6 +10,11 @@
     "draftAndPublish": false
   },
   "attributes": {
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
     "whyChoose": {
       "type": "component",
       "repeatable": true,

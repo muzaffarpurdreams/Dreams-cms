@@ -98,6 +98,7 @@ const mockData = {
   ],
   categories: ["Sofas", "Beds", "Dining", "Wardrobes", "Office"],
   homepage: {
+    heroImageFile: "showroom.jpg",
     whyChoose: [
       { icon: "award", title: "Premium Quality", desc: "Handcrafted with the finest materials for lasting elegance" },
       { icon: "truck", title: "Free Delivery", desc: "Complimentary delivery and assembly across the region" },
@@ -287,6 +288,7 @@ module.exports = {
     // 4. Create Homepage
     await strapi.documents('api::homepage.homepage').create({
       data: {
+        heroImage: uploadedImages[mockData.homepage.heroImageFile]?.id,
         whyChoose: mockData.homepage.whyChoose,
         testimonials: mockData.homepage.testimonials,
         publishedAt: new Date()
