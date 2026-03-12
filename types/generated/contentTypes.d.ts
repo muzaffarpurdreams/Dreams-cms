@@ -445,8 +445,6 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     heroImage: Schema.Attribute.Media<'images'>;
-    heroSubtitle: Schema.Attribute.String;
-    heroTitle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -454,14 +452,10 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    stats: Schema.Attribute.Component<'shared.stat', true>;
     storyImage: Schema.Attribute.Media<'images'>;
-    storyText: Schema.Attribute.Text;
-    storyTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    values: Schema.Attribute.Component<'shared.value', true>;
   };
 }
 

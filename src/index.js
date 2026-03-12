@@ -112,24 +112,8 @@ const mockData = {
     ]
   },
   about: {
-    heroTitle: "About Dreams Furniture",
-    heroSubtitle: "Where luxury meets comfort, and every piece tells a story of craftsmanship and elegance.",
     heroImageFile: "showroom.jpg",
-    storyTitle: "A Legacy of Craftsmanship",
-    storyText: "Founded with a passion for creating exceptional furniture, Dreams Furniture has been Muzaffarpur's premier destination for luxury home furnishings. What started as a small workshop has grown into a sprawling showroom featuring over 500 unique designs.\n\nWe believe that furniture is more than just functional — it's an expression of your personality and taste. That's why every piece in our collection is carefully curated or custom-designed to bring beauty and comfort into your home.",
     storyImageFile: "hero-bg.jpg",
-    stats: [
-      { value: "15+", label: "Years of Excellence" },
-      { value: "10K+", label: "Happy Customers" },
-      { value: "500+", label: "Unique Designs" },
-      { value: "100%", label: "Quality Assured" }
-    ],
-    values: [
-      { icon: "heart", title: "Passion for Craft", desc: "Every piece is crafted with love and meticulous attention to detail." },
-      { icon: "eye", title: "Eye for Design", desc: "Contemporary aesthetics blended with timeless elegance." },
-      { icon: "award", title: "Quality First", desc: "Only the finest materials make it into our collections." },
-      { icon: "users", title: "Customer Focus", desc: "Your satisfaction drives every decision we make." }
-    ]
   },
   contact: {
     title: "Contact Us",
@@ -298,14 +282,8 @@ module.exports = {
     // 5. Create About Page
     await strapi.documents('api::about-page.about-page').create({
       data: {
-        heroTitle: mockData.about.heroTitle,
-        heroSubtitle: mockData.about.heroSubtitle,
         heroImage: uploadedImages[mockData.about.heroImageFile]?.id,
-        storyTitle: mockData.about.storyTitle,
-        storyText: mockData.about.storyText,
         storyImage: uploadedImages[mockData.about.storyImageFile]?.id,
-        stats: mockData.about.stats,
-        values: mockData.about.values,
         publishedAt: new Date()
       }
     });
