@@ -10,20 +10,6 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "heroTitle": {
-      "type": "string"
-    },
-    "heroSubtitle": {
-      "type": "text"
-    },
-    "heroImage": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": ["images"]
-    },
-    "heroButtonText": {
-      "type": "string"
-    },
     "whoWeServe": {
       "type": "component",
       "repeatable": true,

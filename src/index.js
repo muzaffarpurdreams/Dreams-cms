@@ -126,9 +126,6 @@ const mockData = {
     ]
   },
   bulkOrder: {
-    heroTitle: "Bulk Furniture Solutions for Commercial and Residential Projects",
-    heroSubtitle: "From hospitality spaces and offices to developer projects and institutional setups, Dreams Furniture delivers premium furniture in volume with dependable execution.",
-    heroButtonText: "Request Bulk Quote",
     whoWeServe: [
       { title: "Hotels & Resorts", description: "Elegant guest room, lobby, and lounge furniture tailored for hospitality environments.", imageFile: "showroom.jpg" },
       { title: "Offices & Workspaces", description: "Functional desks, chairs, workstations, and meeting room furniture for modern offices.", imageFile: "office-1.jpg" },
@@ -210,7 +207,7 @@ function textToBlocks(text) {
 
 async function ensureBulkOrderPage(strapi, uploadedImages = {}) {
   const existingPage = await strapi.documents('api::bulk-order-page.bulk-order-page').findFirst({
-    populate: ['heroImage', 'galleryImages']
+    populate: ['galleryImages']
   });
 
   if (existingPage) {
@@ -255,10 +252,6 @@ async function ensureBulkOrderPage(strapi, uploadedImages = {}) {
 
   await strapi.documents('api::bulk-order-page.bulk-order-page').create({
     data: {
-      heroTitle: mockData.bulkOrder.heroTitle,
-      heroSubtitle: mockData.bulkOrder.heroSubtitle,
-      heroImage: await getImageId('showroom.jpg'),
-      heroButtonText: mockData.bulkOrder.heroButtonText,
       whoWeServe,
       furnitureCategories,
       whyChooseUs: mockData.bulkOrder.whyChooseUs,
