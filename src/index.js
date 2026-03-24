@@ -265,7 +265,22 @@ async function ensureBulkOrderPage(strapi, uploadedImages = {}) {
 }
 
 module.exports = {
-  register(/*{ strapi }*/) {},
+  register({ strapi }) {
+    strapi.server.routes([
+      {
+        method: 'GET',
+        path: '/health',
+        handler: (ctx) => {
+          ctx.type = 'text/plain';
+          ctx.status = 200;
+          ctx.body = 'OK';
+        },
+        config: {
+          auth: false,
+        },
+      },
+    ]);
+  },
 
   async bootstrap({ strapi }) {
     const ensurePublicPermissions = async () => {
