@@ -15,6 +15,11 @@
       "multiple": false,
       "allowedTypes": ["images"]
     },
+    "incomeTaxBannerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
     "whyChoose": {
       "type": "component",
       "repeatable": true,
