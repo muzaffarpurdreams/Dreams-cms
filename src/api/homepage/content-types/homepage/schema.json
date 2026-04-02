@@ -25,6 +25,11 @@
       "multiple": true,
       "allowedTypes": ["images"]
     },
+    "whyChoosePoster": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
     "whyChoose": {
       "type": "component",
       "repeatable": true,

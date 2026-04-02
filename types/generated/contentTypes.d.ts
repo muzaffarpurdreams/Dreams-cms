@@ -647,6 +647,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     whyChoose: Schema.Attribute.Component<'shared.why-choose', true>;
+    whyChoosePoster: Schema.Attribute.Media<'images'>;
   };
 }
 
