@@ -20,6 +20,11 @@
       "multiple": false,
       "allowedTypes": ["images"]
     },
+    "ctaLogos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    },
     "whyChoose": {
       "type": "component",
       "repeatable": true,

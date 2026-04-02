@@ -491,6 +491,44 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBulkOrderPageBulkOrderPage extends Struct.SingleTypeSchema {
+  collectionName: 'bulk_order_pages';
+  info: {
+    displayName: 'Bulk Order Page';
+    pluralName: 'bulk-order-pages';
+    singularName: 'bulk-order-page';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    bannerImage: Schema.Attribute.Media<'images'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaDescription: Schema.Attribute.Text;
+    ctaTitle: Schema.Attribute.String;
+    furnitureCategories: Schema.Attribute.Component<
+      'shared.bulk-category',
+      true
+    >;
+    galleryImages: Schema.Attribute.Media<'images', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::bulk-order-page.bulk-order-page'
+    > &
+      Schema.Attribute.Private;
+    processSteps: Schema.Attribute.Component<'shared.bulk-process-step', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whoWeServe: Schema.Attribute.Component<'shared.bulk-who-we-serve', true>;
+    whyChooseUs: Schema.Attribute.Component<'shared.value', true>;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -593,8 +631,10 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ctaLogos: Schema.Attribute.Media<'images', true>;
     featuredVideos: Schema.Attribute.Component<'shared.featured-video', true>;
     heroImage: Schema.Attribute.Media<'images'>;
+    incomeTaxBannerImage: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1162,6 +1202,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::blog.blog': ApiBlogBlog;
+      'api::bulk-order-page.bulk-order-page': ApiBulkOrderPageBulkOrderPage;
       'api::category.category': ApiCategoryCategory;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::gallery.gallery': ApiGalleryGallery;
