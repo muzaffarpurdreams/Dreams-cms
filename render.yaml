@@ -10,16 +10,26 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: DATABASE_CLIENT
-        value: postgres
-      - key: DATABASE_URL
+      - key: DB_HOST
         fromDatabase:
           name: dreams-db
-          property: connectionString
-      - key: DATABASE_SSL
-        value: true
-      - key: DATABASE_SSL_REJECT_UNAUTHORIZED
-        value: false
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: dreams-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: dreams-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: dreams-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: dreams-db
+          property: password
       - key: FRONTEND_URL
         value: https://dreamfurnitures.com
       - key: FRONTEND_WWW_URL
